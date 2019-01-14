@@ -7,8 +7,68 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.float-l {
+  float: left;
+}
+.float-r {
+  float: right;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #333;
+}
+.glyph-icon-right {
+  position: absolute;
+  font-size: 18px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+ul.breadcrumb a.active {
+  font-weight: bold;
+}
+
+.footerCta {
+  padding: 8px 15px;
+  margin-top: 20px;
+  border-top: 1px #ddd solid;
+}
+.clearInput {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.clearInput.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.product-detail h2 {
+  margin-top: 0;
+}
+.product-detail .link {
+  font-size: 20px;
+  display: block;
+}
+.list-group-item > div {
+  vertical-align: middle;
+  display: inline-block;
+}
+.list-group-item .album-text > h4 {
+  padding-right: 20px;
+}
+.list-group-item .album-icon {
+  margin-right: 15px;
+}
+@media (max-width: 768px) {
+  .product-thumbnail {
+    text-align: center;
+  }
+  .list-group-item .album-icon {
+    display: none;
+  }
 }
