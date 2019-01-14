@@ -1,5 +1,5 @@
-#########################################################
-ADD DOCS
+## ADD DOCS
+
 #########################################################
 
 BRIEF DESCRIPTION:
@@ -52,8 +52,8 @@ Thanks for the oportunity
 
 Tomas Sebo
 
-#########################################################
-CREATE REACT APP DOCS
+## CREATE REACT APP DOCS
+
 #########################################################
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
