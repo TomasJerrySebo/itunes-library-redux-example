@@ -12,7 +12,7 @@ requirements.
   persistent through each screen, and the rest is always overwritten with
   the lastest api fetch
 - For the API error handling I created a Action "API_ERROR" which I'm firing from the saga if any axios error is thrown
-- During the coding I found out that two of the itunes api endpoints return a CORS error on some Album Listings and Album Details so I implements a JsonP call on them using the "axios-jsonp" packg.
+- During the coding I found out that the itunes api endpoints return a CORS error on some Album Listings and Album Details so I implements a JsonP call on them using the "axios-jsonp" packg.
 - Each components is setting it's page title into the redux store upon componetnt mount
 - Each component triggers also diffrent action creators for setting, fetching the Albums, Artist
 - The Async flow is handled by the redux-saga which is yielding and calling the api promises and waiting for the response, and based on it firing the success or error Actions handled by the reducer

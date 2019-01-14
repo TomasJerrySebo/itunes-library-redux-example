@@ -3,12 +3,10 @@ import axios from "axios";
 import jsonpAdapter from "axios-jsonp";
 
 export const fetchArtistList = term =>
-  axios
-    .get(`${apiUrl}/search?term=${term}&entity=musicArtist`, {
-      headers: {
-        Accept: "application/json"
-      }
-    })
+  axios({
+    url: `${apiUrl}/search?term=${term}&entity=musicArtist`,
+    adapter: jsonpAdapter
+  })
     .then(response => response.data.results)
     .catch(err => {
       throw err;
