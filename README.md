@@ -1,7 +1,5 @@
 ## ADD DOCS
 
-#########################################################
-
 BRIEF DESCRIPTION:
 Based on the description of the testing app, I choose and built a
 WEB APP in REACT. I followed all the instructions and completed all the
@@ -22,13 +20,14 @@ requirements.
 - The components are then in the end taking in the store data, mapping it to the props and rendering the output based on it
 
 LIST OF 3RD PARTY PACKAGES:
-"axios" - Used for the async api calls
-"axios-jsonp" - Used for the async calls which return a CORS error
-"moment" - Used for formating the date in the output
-"react-bootstrap" - Used for the applied styling of the App
-"react-redux","redux" - Used for the external state management
-"react-router-dom" - Used for page/component routing/linking
-"redux-saga" - Used for the middleware async flow
+
+- "axios": Used for the async api calls
+- "axios-jsonp": Used for the async calls which return a CORS error
+- "moment": Used for formating the date in the output
+- "react-bootstrap": Used for the applied styling of the App
+- "react-redux","redux": Used for the external state management
+- "react-router-dom": Used for page/component routing/linking
+- "redux-saga": Used for the middleware async flow
 
 BUILD PROCESS:
 Explained below in the CRETE REAC APP DOCS but briefly:
@@ -53,8 +52,6 @@ Thanks for the oportunity
 Tomas Sebo
 
 ## CREATE REACT APP DOCS
-
-#########################################################
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
