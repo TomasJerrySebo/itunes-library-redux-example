@@ -7,8 +7,8 @@ export const setSearchQs = qs => {
 export const getArtistsList = term => {
   return { type: "GET_ARTISTS", term };
 };
-export const getArtistAlbum = data => {
-  return { type: "GET_ALBUMS", data };
+export const getArtistAlbum = artistId => {
+  return { type: "GET_ALBUMS", artistId };
 };
 export const setLikedAlbum = album => {
   return { type: "SET_LIKED_ALBUM", album };

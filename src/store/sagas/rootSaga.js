@@ -16,8 +16,7 @@ function* getArtists(action) {
 
 function* getAlbums(action) {
   try {
-    const { artistId, artistName } = action.data;
-    const albums = yield call(fetchArtistAlbums, artistId);
+    const albums = yield call(fetchArtistAlbums, action.artistId);
     yield put({
       type: "ALBUMS_FETCH_SUCCEEDED",
       albums

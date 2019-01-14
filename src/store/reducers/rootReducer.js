@@ -13,15 +13,20 @@ const rootReducer = (state = initState, action) => {
     case "SET_SEARCH_QS":
       return { ...state, qs: action.qs };
     case "ARTIST_FETCH_SUCCEEDED":
+      /* setting and overwriting the artistList */
       return { ...state, artistList: action.artists };
     case "ALBUMS_FETCH_SUCCEEDED":
+      /* setting and overwriting the albumsList */
       return { ...state, albumsList: action.albums };
     case "DETAIL_PAGE_FETCHED":
+      /* setting and overwriting the albumDetail */
       return { ...state, albumDetail: action.albumDetail };
     case "LIKED_ALBUM_SET":
       const { likedAlbums } = state;
       const { albumId } = action.album;
-      if (likedAlbums.some(item => item.albumId === albumId)) {
+      /* checking if the liked album id from action is present
+      in the likedAlbums of the store if yes remove if no add it */
+      if (likedAlbums && likedAlbums.some(item => item.albumId === albumId)) {
         const removeLikedAlbums = likedAlbums.filter(
           i => i.albumId !== albumId
         );

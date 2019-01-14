@@ -9,9 +9,7 @@ import {
 } from "react-bootstrap";
 
 export class SearchBar extends Component {
-  static propTypes = {};
-
-  render(bsSize = "small") {
+  render() {
     return (
       <FormGroup>
         <InputGroup>

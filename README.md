@@ -1,3 +1,61 @@
+#########################################################
+ADD DOCS
+#########################################################
+
+BRIEF DESCRIPTION:
+Based on the description of the testing app, I choose and built a
+WEB APP in REACT. I followed all the instructions and completed all the
+requirements.
+
+- The project was created and built with create-react-app
+- I choose to apply external state management using Redux
+- For the middleware I used redux-saga since I read the docs, and I found that you can write a lot cleaner code with it. Up until now I always used thunk.
+- All the data is being stored in the redux store, the likedAlbums are
+  persistent through each screen, and the rest is always overwritten with
+  the lastest api fetch
+- For the API error handling I created a Action "API_ERROR" which I'm firing from the saga if any axios error is thrown
+- During the coding I found out that two of the itunes api endpoints return a CORS error on some Album Listings and Album Details so I implements a JsonP call on them using the "axios-jsonp" packg.
+- Each components is setting it's page title into the redux store upon componetnt mount
+- Each component triggers also diffrent action creators for setting, fetching the Albums, Artist
+- The Async flow is handled by the redux-saga which is yielding and calling the api promises and waiting for the response, and based on it firing the success or error Actions handled by the reducer
+- The reducer is pretty much only updating the store based based on the dispatched action
+- The components are then in the end taking in the store data, mapping it to the props and rendering the output based on it
+
+LIST OF 3RD PARTY PACKAGES:
+"axios" - Used for the async api calls
+"axios-jsonp" - Used for the async calls which return a CORS error
+"moment" - Used for formating the date in the output
+"react-bootstrap" - Used for the applied styling of the App
+"react-redux","redux" - Used for the external state management
+"react-router-dom" - Used for page/component routing/linking
+"redux-saga" - Used for the middleware async flow
+
+BUILD PROCESS:
+Explained below in the CRETE REAC APP DOCS but briefly:
+
+1. cloning the app from the provided git repo
+2. Running yarn install
+3. Running yarn start for it to run in http://localhost:3000/
+   OR
+4. Running yarn build for creating a production build
+5. Creating a div with the Id of "app"
+6. Embeding the static .js,.css chunk files,img files in your app
+
+FINAL THOUGTHS:
+What I really liked about the project that I learned the basics of redux-saga, since I didn't use it before, and I think it has a better use case than thunk.
+
+Recently since the launch I prefered using Unstated built on the React Context Api and Render Props as it's pretty much built upon react core code and is simple to use but, thanks to the Containers it also has a central storage place for the Data. Now with the upcoming React Hooks, it might be a really interesting and exciting way to go as well.
+
+In general I'm okay using both Redux, React with internal state, or Unstated, but what I wanted to say is that it's good to always consider the scope of the project and choose the right way to go :).
+
+Thanks for the oportunity
+
+Tomas Sebo
+
+#########################################################
+CREATE REACT APP DOCS
+#########################################################
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

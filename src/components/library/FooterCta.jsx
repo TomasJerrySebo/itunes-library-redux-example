@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import propTypes from "prop-types";
 import { Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 class FooterCta extends Component {
   headBack = () => {
@@ -12,6 +11,8 @@ class FooterCta extends Component {
   };
   render() {
     const { pathname } = this.props.location;
+    /* Setting the visibility and action of 
+    the bts based on the current path */
     const backBtn =
       pathname !== "/" ? <Button onClick={this.headBack}>BACK</Button> : "";
     const selectBtn =

@@ -1,3 +1,4 @@
+/* Adding option for easier component path lookup*/
 {
   "compilerOptions": {
     "baseUrl": "./src",

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import propTypes from "prop-types";
 import SearchBar from "../../library/SearchBar";
-import BreadCrumb from "../../library/BreadCrumb";
 import { connect } from "react-redux";
 import {
   setPageTitle,
@@ -18,25 +17,32 @@ export class ArtistLookup extends Component {
     this.props.setPageTitle("Artists");
   }
   searchForArtist = el => {
+    /* Func for firing the action for 
+    fetching the Artist List Action GET_ARTISTS
+     and setting the QS */
     const qs = el.target.value;
     this.props.setSearchQs(qs);
     this.props.getArtistsList(qs);
   };
   clearSearchField = el => {
-    const qs = el.target.value;
+    /* Func for emptying the QS and 
+    artistList arr */
     this.props.setSearchQs("");
     this.props.getArtistsList("");
   };
   albumArtistSelect = (name, id) => {
-    const data = {
-      artistName: name,
-      artistId: id
-    };
-    this.props.getArtistAlbum(data);
+    /* Func for firing the action for 
+    fetching the selected Artists - Albums List
+     Action GET_ALBUMS 
+    by passing the artistId */
+    this.props.getArtistAlbum(id);
     const artistUrl = name.replace(/\s/g, "");
+    /* Forwawrding the user to the Artist Album list
+     component */
     this.props.history.push(`/artist/${artistUrl}`);
   };
   render() {
+    /* Setting the default empty text and not found text */
     const defaultText =
       this.props.qs && this.props.qs.length > 0
         ? "Sorry we didn't find any results, try a different artist or check your spelling"
@@ -77,7 +83,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setPageTitle: title => dispatch(setPageTitle(title)),
-    getArtistsList: qs => dispatch(getArtistsList(qs)),
+    getArtistsList: artistId => dispatch(getArtistsList(artistId)),
     setSearchQs: qs => dispatch(setSearchQs(qs)),
     getArtistAlbum: data => dispatch(getArtistAlbum(data))
   };

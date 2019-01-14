@@ -13,6 +13,7 @@ export const fetchArtistList = term =>
     .catch(err => {
       throw err;
     });
+/* Use of jsonp adapter as most of the album api calls return a CORS error */
 export const fetchArtistAlbums = artist =>
   axios({
     url: `${apiUrl}/lookup?id=${artist}&entity=album`,

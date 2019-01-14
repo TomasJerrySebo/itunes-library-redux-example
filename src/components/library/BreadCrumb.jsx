@@ -1,7 +1,5 @@
 import React from "react";
 import propTypes from "prop-types";
-import { Breadcrumb } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
 const BreadCrumb = props => {

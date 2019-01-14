@@ -1,61 +1,28 @@
 import React, { Component } from "react";
 import propTypes from "prop-types";
-import { ListGroup, Row, Col, Image } from "react-bootstrap";
-import ItemWrapper from "../../library/ItemWrapper";
-import BreadCrumb from "../../library/BreadCrumb";
+import { Row } from "react-bootstrap";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import moment from "moment";
-
+import AlbumDescription from "./AlbumDescription";
+import AlbumThumbnail from "./AlbumThumbnail";
 import { setPageTitle } from "../../../store/actions/rootActions";
 
 export class AlbumDetail extends Component {
-  static propTypes = {};
   componentDidMount() {
+    /* Setting page title from the router 
+    location state passed with the Route */
     if (this.props.location.state)
       this.props.setPageTitle(this.props.location.state.pageTitle);
     else this.props.setPageTitle("Album Detail");
   }
   render() {
+    /* Rendering the album detail from the albumDetail store arr */
     const { albumDetail } = this.props;
     return (
       <div className="product-detail">
         {albumDetail && albumDetail.length > 0 ? (
           <Row className="show-grid">
-            <Col xs={12} sm={2} className="product-thumbnail">
-              <Image src={albumDetail[0].artworkUrl100} thumbnail />
-            </Col>
-            <Col xs={12} sm={10}>
-              <a
-                href={albumDetail[0].artistViewUrl}
-                target="blank"
-                className="link"
-              >
-                <h2>{albumDetail[0].artistName}</h2>
-              </a>
-              <dl>
-                <dt>View Album</dt>
-                <dd>
-                  <a
-                    href={albumDetail[0].collectionViewUrl}
-                    target="blank"
-                    className="product-detail-link"
-                  >
-                    {albumDetail[0].collectionName}
-                  </a>
-                </dd>
-                <dt>Track Count</dt>
-                <dd>{albumDetail[0].trackCount}</dd>
-                <dt>Release Date</dt>
-                <dd>
-                  {moment(albumDetail[0].releaseDate).format("MMMM Do YYYY")}
-                </dd>
-                <dt>Album Price</dt>
-                <dd>
-                  {albumDetail[0].collectionPrice} {albumDetail[0].currency}
-                </dd>
-              </dl>
-            </Col>
+            <AlbumThumbnail thumb={albumDetail[0].artworkUrl100} />
+            <AlbumDescription albumDetail={albumDetail[0]} />
           </Row>
         ) : (
           <div>

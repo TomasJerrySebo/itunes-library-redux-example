@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ListGroupItem, Button } from "react-bootstrap";
+import { ListGroupItem } from "react-bootstrap";
 import propTypes from "prop-types";
 import AlbumIcon from "./AlbumIcon";
 import AlbumText from "./AlbumText";
@@ -9,6 +9,8 @@ export class ItemWrapper extends Component {
   render() {
     return (
       <ListGroupItem
+        /* passing the onclick event data to the 
+      parent func for processing */
         onClick={() => {
           this.props.albumArtistSelect(
             this.props.title,

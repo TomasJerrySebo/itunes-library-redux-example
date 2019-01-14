@@ -9,6 +9,8 @@ import moment from "moment";
 export class AlbumListing extends Component {
   state = { artistName: "Album Detail" };
   componentDidMount() {
+    /* Setting the artistName state to be later used 
+    in a action call and the PageTitle*/
     if (this.props.albumsList && this.props.albumsList[0]) {
       this.setState(
         { artistName: this.props.albumsList[0]["artistName"] },
@@ -17,6 +19,9 @@ export class AlbumListing extends Component {
     }
   }
   albumArtistSelect = (albumName, albumId, albumImg) => {
+    /*  Func which is run onClick on the List Item 
+    (Album,Artist). */
+    /* Init Action SET_LIKED_ALBUM for Setting the selected liked album and it's details */
     this.props.setLikedAlbum({
       albumId: albumId,
       artistName: this.state.artistName,
@@ -25,6 +30,7 @@ export class AlbumListing extends Component {
     });
   };
   render() {
+    /* Default Text Content while async api loading */
     let itemWrapper = (
       <div>
         <h4>Loading...</h4>
@@ -34,6 +40,8 @@ export class AlbumListing extends Component {
       itemWrapper = this.props.albumsList.map(item => {
         let glyph = "heart-empty";
         if (item.wrapperType === "collection") {
+          /* Checking if the looped item.collectionId 
+          is in the likedAlbums array */
           if (
             this.props.likedAlbums &&
             this.props.likedAlbums.length > 0 &&

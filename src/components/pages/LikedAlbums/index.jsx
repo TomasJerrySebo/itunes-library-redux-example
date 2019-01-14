@@ -14,9 +14,10 @@ export class LikedAlbums extends Component {
     this.props.setPageTitle("Liked Albums");
   }
   albumArtistSelect = (albumName, albumId, albumPic) => {
-    /* Main CTA function which is run onClick on the List Item 
+    /*  Func which is run onClick on the List Item 
     (Album,Artist). */
-    /* Fetching the album detail data based on the albumId */
+    /* Init Action GET_ALBUM_DETAIL for 
+    Fetching the album detail data based on the albumId */
     this.props.getAlbumDetail(albumId);
     /* Forwawrding the user to the Album detail component
      with the fetched data */
@@ -43,7 +44,9 @@ export class LikedAlbums extends Component {
         ) : (
           <div>
             <h1>You don't have any liked albums?</h1>
-            <p>Click Continue and search for an Artist's album to like.</p>
+            <p>
+              Click <b>SELECT</b> and search for an Artist's album to like.
+            </p>
           </div>
         )}
       </ListGroup>
