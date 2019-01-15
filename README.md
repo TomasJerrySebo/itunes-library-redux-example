@@ -1,18 +1,13 @@
 ## ADD DOCS
 
 BRIEF DESCRIPTION:
-Based on the description of the testing app, I choose and built a
-WEB APP in REACT. I followed all the instructions and completed all the
-requirements.
 
 - The project was created and built with create-react-app
 - I choose to apply external state management using Redux
-- For the middleware I used redux-saga since I read the docs, and I found that you can write a lot cleaner code with it. Up until now I always used thunk.
-- All the data is being stored in the redux store, the likedAlbums are
-  persistent through each screen, and the rest is always overwritten with
-  the lastest api fetch
+- For the middleware I used redux-saga since I read the docs, and I found that you can write a lot cleaner code with it. 
+- All the data is being stored in the redux store, the likedAlbums are persistent through each screen, and the rest is always overwritten with the lastest api fetch
 - For the API error handling I created a Action "API_ERROR" which I'm firing from the saga if any axios error is thrown
-- During the coding I found out that the itunes api endpoints return a CORS error on some Album Listings and Album Details so I implements a JsonP call on them using the "axios-jsonp" packg.
+- During the coding I found out that the itunes api endpoints return a CORS error on some Artist, Album Listings or Album Details so I implements a JsonP Adapter on the Axios calls using the "axios-jsonp" packg.
 - Each components is setting it's page title into the redux store upon componetnt mount
 - Each component triggers also diffrent action creators for setting, fetching the Albums, Artist
 - The Async flow is handled by the redux-saga which is yielding and calling the api promises and waiting for the response, and based on it firing the success or error Actions handled by the reducer
@@ -47,9 +42,7 @@ Recently since the launch I prefered using Unstated built on the React Context A
 
 In general I'm okay using both Redux, React with internal state, or Unstated, but what I wanted to say is that it's good to always consider the scope of the project and choose the right way to go :).
 
-Thanks for the oportunity
-
-Tomas Sebo
+Thanks
 
 ## CREATE REACT APP DOCS
 
