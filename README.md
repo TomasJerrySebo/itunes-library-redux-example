@@ -35,15 +35,6 @@ Explained below in the CRETE REAC APP DOCS but briefly:
 5. Creating a div with the Id of "app"
 6. Embeding the static .js,.css chunk files,img files in your app
 
-FINAL THOUGTHS:
-What I really liked about the project that I learned the basics of redux-saga, since I didn't use it before, and I think it has a better use case than thunk.
-
-Recently since the launch I prefered using Unstated built on the React Context Api and Render Props as it's pretty much built upon react core code and is simple to use but, thanks to the Containers it also has a central storage place for the Data. Now with the upcoming React Hooks, it might be a really interesting and exciting way to go as well.
-
-In general I'm okay using both Redux, React with internal state, or Unstated, but what I wanted to say is that it's good to always consider the scope of the project and choose the right way to go :).
-
-Thanks
-
 ## CREATE REACT APP DOCS
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
